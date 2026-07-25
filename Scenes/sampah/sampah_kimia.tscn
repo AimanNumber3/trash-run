@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ynqls64qsncx"]
+
+[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_mtkdo"]
+[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_wf3kl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fp1qt"]
+radius = 60.530983
+
+[node name="SampahBerbahayaTanah" type="Area2D" unique_id=313877236]
+script = ExtResource("1_wf3kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1516129452]
+texture = ExtResource("1_mtkdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495495094]
+shape = SubResource("CircleShape2D_fp1qt")
+debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)

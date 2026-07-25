@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqhvpvqwtrhwr"]
+
+[ext_resource type="Script" uid="uid://cdldviwjix858" path="res://Script/background.gd" id="1_pojwb"]
+[ext_resource type="Texture2D" uid="uid://dfsn062020sx4" path="res://Assets/0b3e02d6-dbae-44b1-9f62-59af951b19b4.png" id="1_sn1xx"]
+
+[node name="Background" type="ParallaxBackground" unique_id=950400145]
+script = ExtResource("1_pojwb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1867611889]
+motion_mirroring = Vector2(1178, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=738162725]
+texture_filter = 1
+scale = Vector2(0.8567707, 0.8567708)
+texture = ExtResource("1_sn1xx")
+centered = false

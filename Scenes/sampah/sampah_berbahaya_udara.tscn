@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://x66kqc4lfg7u"]
+
+[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_rto41"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtkdo"]
+radius = 50.695168
+
+[node name="SampahBerbahayaUdara" type="Area2D" unique_id=1516974653]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4409754]
+texture = ExtResource("1_rto41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1291892819]
+shape = SubResource("CircleShape2D_mtkdo")
+debug_color = Color(0.6820504, 0, 0.11901053, 0.41960785)
