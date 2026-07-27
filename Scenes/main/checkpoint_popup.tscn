@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bkp3na0u37nil"]
+
+[ext_resource type="Script" uid="uid://jqsvxjgpnrtg" path="res://Script/checkpoint_popup.gd" id="1_1hmht"]
+[ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_1qf2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hmht"]
+bg_color = Color(2.2621452e-06, 0.6258539, 0.19777015, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkt6c"]
+bg_color = Color(0.65882355, 0.7764706, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cpyx"]
+bg_color = Color(1, 0.2627451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp5p3"]
+bg_color = Color(1, 0.51655674, 0.4505146, 1)
+
+[node name="CheckpointPopup" type="CanvasLayer" unique_id=27998610]
+process_mode = 3
+script = ExtResource("1_1hmht")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=319427636]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=694245891]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1qf2j")
+theme_override_font_sizes/font_size = 30
+text = "APAKAH ANDA MAU MEMASUKI MINIGAME"
+
+[node name="YesButton" type="Button" parent="VBoxContainer" unique_id=886360435]
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.65882355)
+theme_override_fonts/font = ExtResource("1_1qf2j")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hmht")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dkt6c")
+text = "YA"
+
+[node name="NoButton" type="Button" parent="VBoxContainer" unique_id=1788193965]
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.65882355)
+theme_override_fonts/font = ExtResource("1_1qf2j")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cpyx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yp5p3")
+text = "TIDAK"
+
+[connection signal="pressed" from="VBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cbdlupdd1wavc"]
+
+[ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_e0onf"]
+[ext_resource type="Script" uid="uid://docbtqwumq2ya" path="res://Script/hud.gd" id="1_fccik"]
+[ext_resource type="Texture2D" uid="uid://bdy8tq2njm8te" path="res://Assets/sampah/garbage bag small 1.png" id="3_bjfho"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2122006861]
+script = ExtResource("1_fccik")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=2017068620]
+offset_right = 64.0
+offset_bottom = 23.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_e0onf")
+theme_override_font_sizes/font_size = 40
+text = "SCORE: 0"
+
+[node name="StartLabel" type="Label" parent="." unique_id=868531260]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -30.0
+offset_right = 95.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_e0onf")
+theme_override_font_sizes/font_size = 40
+text = "TEKAN SPASI UNTUK BERMAIN"
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=150035685]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_top = 8.0
+offset_right = -97.0
+offset_bottom = 48.0
+grow_horizontal = 0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(5, 5)
+alignment = 1
+
+[node name="Heart1" type="TextureRect" parent="HeartContainer" unique_id=1058720406]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_bjfho")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=632882646]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_bjfho")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1939350253]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_bjfho")
+stretch_mode = 3

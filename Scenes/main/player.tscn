@@ -20,5 +20,4 @@ shape = SubResource("RectangleShape2D_fp1qt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1219072703]
 shape = SubResource("RectangleShape2D_fp1qt")
 
-[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

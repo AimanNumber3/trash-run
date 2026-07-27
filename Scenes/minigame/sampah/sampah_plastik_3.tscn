@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cldlx0i8kq47n"]
+
+[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_q614j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2k7rh"]
+radius = 60.530983
+
+[node name="SampahPlastik3" type="Area2D" unique_id=1794759114]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1377135008]
+texture = ExtResource("1_q614j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076377993]
+shape = SubResource("CircleShape2D_2k7rh")
+debug_color = Color(0.57259566, 0.55684555, 0, 0.41960785)

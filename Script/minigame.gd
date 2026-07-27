@@ -1,0 +1,22 @@
+extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	GameManager.minigame_bonus_score = 0
+	$MinigameHUD.get_node("TargetLabel").text = "Tangkap sampah: " + GameManager.pending_trash_type
+	$MinigameTimer.timeout.connect(_on_minigame_timer_timeout)
+	$MinigameTimer.start()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	$MinigameHUD.get_node("TimeLabel").text = "Waktu: " + str(int($MinigameTimer.time_left))
+	$MinigameHUD.get_node("ScoreLabel").text = "Bonnus: " + str(GameManager.minigame_bonus_score)
+
+func _on_minigame_timer_timeout() -> void:
+	end_minigame()
+
+func end_minigame() -> void:
+	GameManager.add_score(GameManager.minigame_bonus_score)
+	GameManager.minigame_bonus_score = 0
+	GameManager.returning_from_minigame = true
+	get_tree().change_scene_to_file("res://Scenes/world.tscn")

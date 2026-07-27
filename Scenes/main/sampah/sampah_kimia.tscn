@@ -6,12 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fp1qt"]
 radius = 60.530983
 
-[node name="SampahBerbahayaTanah" type="Area2D" unique_id=313877236]
+[node name="SampahBerbahayaTanah" type="Area2D" unique_id=313877236 groups=["sampah_hit"]]
 script = ExtResource("1_wf3kl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1516129452]
 texture = ExtResource("1_mtkdo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495495094]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495495094 groups=["sampah_hit"]]
 shape = SubResource("CircleShape2D_fp1qt")
 debug_color = Color(0.9999997, 0.01477797, 0.032877155, 0.41960785)
