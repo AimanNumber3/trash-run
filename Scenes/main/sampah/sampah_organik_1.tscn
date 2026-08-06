@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d120ovut88kof"]
 
 [ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_1yf8p"]
-[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_c68vq"]
+[ext_resource type="Script" uid="uid://0yrreou2e5al" path="res://Script/sampah_poin.gd" id="1_miyyy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c68vq"]
 radius = 60.530983
 
-[node name="SampahOrganik1" type="Area2D" unique_id=1794759114]
-script = ExtResource("1_c68vq")
+[node name="SampahOrganik1" type="Area2D" unique_id=1794759114 groups=["sampah_poin"]]
+script = ExtResource("1_miyyy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086268913]
 texture = ExtResource("1_1yf8p")

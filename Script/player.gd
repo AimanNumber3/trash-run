@@ -16,6 +16,9 @@ func _physics_process(delta: float) -> void:
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sampah_hit") and not is_invulnerable:
 		take_damage()
+	elif area.is_in_group("sampah_poin"):
+		GameManager.add_score(10)
+		area.queue_free()
 
 func take_damage() -> void:
 	GameManager.lose_heart()

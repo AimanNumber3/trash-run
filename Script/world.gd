@@ -33,9 +33,8 @@ func resume_game():
 
 func _process(delta: float) -> void:
 	if GameManager.game_running:
-		GameManager.add_score(int(GameManager.speed * delta))
-		if GameManager.speed > GameManager.MAX_SPEED:
-			GameManager.speed = GameManager.MAX_SPEED
+		GameManager.add_distance(GameManager.speed * delta)
+		GameManager.increase_speed(10.0 * delta)
 	else:
 		if Input.is_action_pressed("ui_accept"):
 			GameManager.game_running = true

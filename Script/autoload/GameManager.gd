@@ -1,6 +1,15 @@
 extends Node
 
 var score: int = 0
+signal score_changed(new_score)
+
+var raw_distance: float = 0.0
+const METER_MODIFIER: int = 18
+signal distance_changed(new_meters)
+
+var next_checkpoint_score: int = 500
+const CHECKPOINT_INTERVAL: int = 500
+
 var speed: float = 0.0
 var screen_size: Vector2i
 var game_running: bool = false
@@ -10,16 +19,11 @@ const MAX_HEARTS: int = 3
 
 const START_SPEED: float = 300.0
 const MAX_SPEED: float = 500.0
-const SCORE_MODIFIER: int = 18
-const SPEED_MODIFIER: int = 50
 
-var next_checkpoint_score: int = 500
-const CHECKPOINT_INTERVAL: int = 500
 var pending_trash_type: String = ""
 var minigame_bonus_score: int = 0
 var returning_from_minigame: bool = false
 
-signal score_changed(new_score)
 signal heart_changed(new_hearts)
 signal checkpoint_reached(trash_type)
 
@@ -35,7 +39,12 @@ func reset_run() -> void:
 func add_score(amount: int) -> void:
 	score += amount
 	score_changed.emit(score)
-	if game_running and (score / SCORE_MODIFIER) >= next_checkpoint_score:
+
+func add_distance(amount: float) -> void:
+	raw_distance += amount
+	var meters := int(raw_distance / METER_MODIFIER)
+	distance_changed.emit(meters)
+	if game_running and meters >= next_checkpoint_score:
 		trigger_checkpoint()
 
 func trigger_checkpoint() -> void:

@@ -4,10 +4,14 @@ extends CanvasLayer
 
 func _ready() -> void:
 	GameManager.score_changed.connect(_on_score_changed)
+	GameManager.distance_changed.connect(_on_distance_changed)
 	GameManager.heart_changed.connect(_on_heart_changed)
 
 func _on_score_changed(new_score: int) -> void:
-	$ScoreLabel.text = "SCORE: " + str(new_score / GameManager.SCORE_MODIFIER)
+	$ScoreContainer/ScoreLabel.text = "SKOR: " + str(new_score)
+
+func _on_distance_changed(new_meters: int) -> void:
+	$ScoreContainer/MeterLabel.text = "JARAK: " + str(new_meters)
 
 func _on_heart_changed(new_hearts: int) -> void:
 	var heart_icons = heart_container.get_children()
