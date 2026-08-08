@@ -27,6 +27,7 @@ func show_game_over() -> void:
 	name_input.show()
 	submit_button.show()
 	refresh_leaderboard()
+	show()
 
 func refresh_leaderboard() -> void:
 	for child in leaderboard_list.get_children():
