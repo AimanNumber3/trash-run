@@ -10,7 +10,7 @@ var is_invulnerable: bool = false
 func _physics_process(delta: float) -> void:
 	velocity.y += GameManager.GRAVITY * delta
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:

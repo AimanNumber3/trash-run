@@ -6,7 +6,7 @@ const PLAYER_START_POS := Vector2(150, 485)
 func _ready() -> void:
 	add_to_group("world")
 	GameManager.screen_size = get_window().size
-	$GameOver.get_node("Button").pressed.connect(_on_restart_pressed)
+	$GameOver.get_node("RestartButton").pressed.connect(_on_restart_pressed)
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
 	
 	if GameManager.returning_from_minigame:
@@ -49,5 +49,5 @@ func _on_restart_pressed() -> void:
 
 func game_over():
 	get_tree().paused = true
-	$GameOver.show()
+	$GameOver.show_game_over()
 	GameManager.game_running = false

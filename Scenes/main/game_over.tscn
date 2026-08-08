@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bq00hpxftimqa"]
 
+[ext_resource type="Script" uid="uid://bsi1ucafkmtbj" path="res://Script/game_over.gd" id="1_beq28"]
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_ojehl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hko8n"]
@@ -9,8 +10,9 @@ bg_color = Color(1, 0, 0, 1)
 bg_color = Color(1, 0.51655674, 0.4505146, 1)
 
 [node name="GameOver" type="CanvasLayer" unique_id=1012637461]
+script = ExtResource("1_beq28")
 
-[node name="Button" type="Button" parent="." unique_id=2025977304]
+[node name="RestartButton" type="Button" parent="." unique_id=2025977304]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -28,3 +30,21 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_hko8n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6f7c8")
 text = "RESTART"
+
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=137378796]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="NameInput" type="LineEdit" parent="." unique_id=2025488363]
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="SubmitButton" type="Button" parent="." unique_id=1657203708]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="LeaderboardList" type="VBoxContainer" parent="." unique_id=1263432694]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

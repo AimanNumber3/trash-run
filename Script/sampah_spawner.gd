@@ -4,7 +4,7 @@ extends Node2D
 @export var poins: Array[PackedScene]
 @export var bahaya_chance: float = 0.45
 @export var poins_chance: float = 0.45
-@export var spawn_distance: float = 350.0
+@export var spawn_distance: float = 370.0
 
 @onready var markers: Array[Marker2D] = [$Marker2D, $Marker2D2]
 
