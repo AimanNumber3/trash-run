@@ -20,7 +20,7 @@ texture = ExtResource("2_vnlq7")
 centered = false
 
 [node name="Catcher" parent="." unique_id=1070423424 groups=["catcher"] instance=ExtResource("1_ij8rg")]
-position = Vector2(568, 480)
+position = Vector2(576, 520)
 script = ExtResource("2_5bepb")
 
 [node name="ItemSpawner" type="Node2D" parent="." unique_id=2079976994]
@@ -42,7 +42,7 @@ position = Vector2(192, -184)
 [node name="MinigameHUD" parent="." unique_id=2116172936 instance=ExtResource("3_xt64r")]
 
 [node name="MinigameTimer" type="Timer" parent="." unique_id=359147941]
-wait_time = 15.0
+wait_time = 30.0
 one_shot = true
 
 [connection signal="timeout" from="ItemSpawner/Timer" to="ItemSpawner" method="_on_timer_timeout"]

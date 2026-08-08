@@ -26,10 +26,6 @@ position = Vector2(242, 447)
 script = ExtResource("2_fj7yv")
 platforms = Array[PackedScene]([ExtResource("3_tlwt5")])
 
-[node name="Timer" type="Timer" parent="PlatformSpawner" unique_id=785030920 groups=["sampah_hit", "sampah_poin"]]
-wait_time = 0.5
-autostart = true
-
 [node name="Marker2D" type="Marker2D" parent="PlatformSpawner" unique_id=1646838582]
 position = Vector2(1735, 557)
 
@@ -65,5 +61,3 @@ position = Vector2(1408, 224)
 process_mode = 2
 
 [node name="CheckpointPopup" parent="." unique_id=27998610 instance=ExtResource("12_c5t2i")]
-
-[connection signal="timeout" from="PlatformSpawner/Timer" to="PlatformSpawner" method="_on_timer_timeout"]

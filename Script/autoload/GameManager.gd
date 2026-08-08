@@ -19,6 +19,7 @@ const MAX_HEARTS: int = 3
 
 const START_SPEED: float = 300.0
 const MAX_SPEED: float = 500.0
+const GRAVITY: float = 2500
 
 var pending_trash_type: String = ""
 var minigame_bonus_score: int = 0
@@ -29,11 +30,13 @@ signal checkpoint_reached(trash_type)
 
 func reset_run() -> void:
 	score = 0
+	raw_distance = 0.0
 	hearts = MAX_HEARTS
 	speed = START_SPEED
 	game_running = false
 	next_checkpoint_score = CHECKPOINT_INTERVAL
 	score_changed.emit(score)
+	distance_changed.emit(0)
 	heart_changed.emit(hearts)
 
 func add_score(amount: int) -> void:

@@ -143,7 +143,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_psa5u")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 12.0
 }, {
 "frames": [{
@@ -179,12 +179,13 @@ radius = 36.0
 [node name="Player" type="CharacterBody2D" unique_id=874440815]
 script = ExtResource("1_cvnsp")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1220904126]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438108634]
 texture_filter = 1
 position = Vector2(47.999996, -15.999999)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_fp1qt")
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2077720667]
 position = Vector2(-6.5, 3.5)

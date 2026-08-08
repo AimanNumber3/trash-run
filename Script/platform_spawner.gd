@@ -1,14 +1,26 @@
 extends Node2D
 
 @export var platforms: Array[PackedScene]
+@export var spawn_distance: float = 500.0
 
 @onready var marker: Marker2D = $Marker2D
 
-func _on_timer_timeout() -> void:
+var distance_storage: float = 0.0
+
+func _process(delta: float) -> void:
 	if not GameManager.game_running:
 		return
-	var random_platform: PackedScene = platforms.pick_random()
-	var random_platform_instance: Node = random_platform.instantiate()
-	add_child(random_platform_instance)
+	distance_storage += GameManager.speed * delta
+	if distance_storage >= spawn_distance:
+		distance_storage = 0.0
+		try_spawn()
+
+func try_spawn() -> void:
+	var roll := randf()
+	var spawn_scene: PackedScene = null
 	
-	random_platform_instance.position = marker.position
+	spawn_scene = platforms.pick_random()
+	
+	var instance: Node = spawn_scene.instantiate()
+	add_child(instance)
+	instance.position = marker.position
