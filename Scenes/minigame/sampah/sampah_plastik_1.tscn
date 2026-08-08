@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://drb357uivd8dv"]
 
+[ext_resource type="Script" uid="uid://y3oc4ueqmayl" path="res://Script/falling_item.gd" id="1_i7uba"]
 [ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="2_4vkwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iblry"]
 radius = 60.530983
 
 [node name="SampahPlastik1" type="Area2D" unique_id=1697615824]
+script = ExtResource("1_i7uba")
+item_category = "anorganik"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
 texture = ExtResource("2_4vkwy")

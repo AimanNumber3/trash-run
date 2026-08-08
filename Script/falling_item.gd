@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("catcher"):
 		if item_category == GameManager.pending_trash_type:
-			GameManager.minigame_bonus_score += 20
+			GameManager.minigame_bonus_score += 5
+			queue_free()
 		else:
 			GameManager.minigame_bonus_score = max(0, GameManager.minigame_bonus_score - 10)
 			queue_free()

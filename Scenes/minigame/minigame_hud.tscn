@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://o3uw4afc15k5"]
 
+[ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_sxmmw"]
+
 [node name="MinigameHUD" type="CanvasLayer" unique_id=2116172936]
 
 [node name="TargetLabel" type="Label" parent="." unique_id=1850063379]
+texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_sxmmw")
+theme_override_font_sizes/font_size = 40
+text = "organik"
 
 [node name="TimeLabel" type="Label" parent="." unique_id=534007774]
+texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -18,7 +25,24 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_sxmmw")
+theme_override_font_sizes/font_size = 40
+text = "WAKTU: 15"
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=1584628285]
+[node name="ScoreContainer" type="VBoxContainer" parent="." unique_id=675256777]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="BonusLabel" type="Label" parent="ScoreContainer" unique_id=413516098]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxmmw")
+theme_override_font_sizes/font_size = 40
+text = "BONUS: 0"
+
+[node name="ScoreLabel" type="Label" parent="ScoreContainer" unique_id=1584628285]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sxmmw")
+theme_override_font_sizes/font_size = 25
+text = "SKOR: 500"

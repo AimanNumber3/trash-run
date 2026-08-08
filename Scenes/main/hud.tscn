@@ -8,8 +8,9 @@
 script = ExtResource("1_fccik")
 
 [node name="ScoreContainer" type="VBoxContainer" parent="." unique_id=1173770538]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 184.0
+offset_bottom = 103.0
+alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="ScoreContainer" unique_id=2017068620]
 texture_filter = 1

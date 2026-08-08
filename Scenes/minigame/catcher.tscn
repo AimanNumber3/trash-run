@@ -1,14 +1,70 @@
 [gd_scene format=3 uid="uid://quwohg51enu4"]
 
-[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_28518"]
+[ext_resource type="Texture2D" uid="uid://gjsp4r4en5w1" path="res://Assets/player/Dumpster 1 - Animated_spritesheet.png" id="1_28518"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxbfd"]
+atlas = ExtResource("1_28518")
+region = Rect2(350, 0, 70, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ooct"]
+atlas = ExtResource("1_28518")
+region = Rect2(280, 0, 70, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jdvg"]
+atlas = ExtResource("1_28518")
+region = Rect2(210, 0, 70, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0u87"]
+atlas = ExtResource("1_28518")
+region = Rect2(140, 0, 70, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyvm6"]
+atlas = ExtResource("1_28518")
+region = Rect2(70, 0, 70, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbouc"]
+atlas = ExtResource("1_28518")
+region = Rect2(0, 0, 70, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp1qt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxbfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ooct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jdvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0u87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyvm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbouc")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1qt"]
 size = Vector2(128, 128)
 
 [node name="Catcher" type="CharacterBody2D" unique_id=1070423424]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1424835934]
-texture = ExtResource("1_28518")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1387256646]
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fp1qt")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1405249782]
 shape = SubResource("RectangleShape2D_fp1qt")

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 500.0
 @export var min_x: float = 50.0
-@export var max_x: float = 1152.0
+@export var max_x: float = 1100.0
 
 func _ready() -> void:
 	add_to_group("catcher")

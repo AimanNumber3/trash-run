@@ -31,6 +31,13 @@ window/stretch/aspect="expand"
 sampah_hit=""
 sampah_poin=""
 
+[input]
+
+lompat={
+"deadzone": 0.2,
+"events": []
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

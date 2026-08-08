@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://vnpq4kabkbjv" path="res://Scenes/GroundVariant/ground_default.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cbdlupdd1wavc" path="res://Scenes/main/hud.tscn" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://ynqls64qsncx" path="res://Scenes/main/sampah/sampah_kimia.tscn" id="7_o06y3"]
-[ext_resource type="Script" uid="uid://ebx1lvpaiv2m" path="res://Script/sampah_bahaya_spawner.gd" id="8_k7acu"]
-[ext_resource type="Script" uid="uid://bd56wkq0a4io4" path="res://Script/sampah_poin_spawner.gd" id="9_ikia7"]
+[ext_resource type="Script" uid="uid://ebx1lvpaiv2m" path="res://Script/sampah_spawner.gd" id="8_k7acu"]
+[ext_resource type="PackedScene" uid="uid://x66kqc4lfg7u" path="res://Scenes/main/sampah/sampah_berbahaya_udara.tscn" id="9_ikia7"]
 [ext_resource type="PackedScene" uid="uid://d120ovut88kof" path="res://Scenes/main/sampah/sampah_organik_1.tscn" id="10_7yui6"]
+[ext_resource type="PackedScene" uid="uid://bc0de6feu8h2s" path="res://Scenes/main/sampah/sampah_plastik_1.tscn" id="11_c5t2i"]
 [ext_resource type="PackedScene" uid="uid://bq00hpxftimqa" path="res://Scenes/main/game_over.tscn" id="12_7yui6"]
 [ext_resource type="PackedScene" uid="uid://bkp3na0u37nil" path="res://Scenes/main/checkpoint_popup.tscn" id="12_c5t2i"]
 
@@ -26,7 +27,7 @@ script = ExtResource("2_fj7yv")
 platforms = Array[PackedScene]([ExtResource("3_tlwt5")])
 
 [node name="Timer" type="Timer" parent="PlatformSpawner" unique_id=785030920 groups=["sampah_hit", "sampah_poin"]]
-wait_time = 1.7999999999999998
+wait_time = 0.5
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="PlatformSpawner" unique_id=1646838582]
@@ -49,32 +50,15 @@ position = Vector2(1819, 557)
 [node name="SampahBerbahayaTanah" parent="." unique_id=313877236 instance=ExtResource("7_o06y3")]
 position = Vector2(1144, 440)
 
-[node name="SampahBahayaSpawner" type="Node2D" parent="." unique_id=2081287211]
+[node name="SampahSpawner" type="Node2D" parent="." unique_id=2081287211]
 script = ExtResource("8_k7acu")
-sampahs = Array[PackedScene]([ExtResource("7_o06y3")])
+bahaya = Array[PackedScene]([ExtResource("9_ikia7"), ExtResource("7_o06y3")])
+poins = Array[PackedScene]([ExtResource("10_7yui6"), ExtResource("11_c5t2i")])
 
-[node name="Timer" type="Timer" parent="SampahBahayaSpawner" unique_id=526991292]
-wait_time = 1.5
-autostart = true
-
-[node name="Marker2D" type="Marker2D" parent="SampahBahayaSpawner" unique_id=682665597]
+[node name="Marker2D" type="Marker2D" parent="SampahSpawner" unique_id=682665597]
 position = Vector2(1408, 448)
 
-[node name="Marker2D2" type="Marker2D" parent="SampahBahayaSpawner" unique_id=987536042]
-position = Vector2(1408, 224)
-
-[node name="SampahPoinSpawner" type="Node2D" parent="." unique_id=920425099]
-script = ExtResource("9_ikia7")
-poins = Array[PackedScene]([ExtResource("10_7yui6")])
-
-[node name="Timer" type="Timer" parent="SampahPoinSpawner" unique_id=57067229]
-wait_time = 1.5
-autostart = true
-
-[node name="Marker2D" type="Marker2D" parent="SampahPoinSpawner" unique_id=156458337]
-position = Vector2(1408, 448)
-
-[node name="Marker2D2" type="Marker2D" parent="SampahPoinSpawner" unique_id=2020519757]
+[node name="Marker2D2" type="Marker2D" parent="SampahSpawner" unique_id=987536042]
 position = Vector2(1408, 224)
 
 [node name="GameOver" parent="." unique_id=1012637461 instance=ExtResource("12_7yui6")]
@@ -83,5 +67,3 @@ process_mode = 2
 [node name="CheckpointPopup" parent="." unique_id=27998610 instance=ExtResource("12_c5t2i")]
 
 [connection signal="timeout" from="PlatformSpawner/Timer" to="PlatformSpawner" method="_on_timer_timeout"]
-[connection signal="timeout" from="SampahBahayaSpawner/Timer" to="SampahBahayaSpawner" method="_on_timer_timeout"]
-[connection signal="timeout" from="SampahPoinSpawner/Timer" to="SampahPoinSpawner" method="_on_timer_timeout"]
