@@ -8,7 +8,7 @@ func _ready() -> void:
 	GameManager.screen_size = get_window().size
 	$GameOver.get_node("RestartButton").pressed.connect(_on_restart_pressed)
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
-	
+
 	if GameManager.returning_from_minigame:
 		GameManager.returning_from_minigame = false
 		resume_game()

@@ -7,6 +7,7 @@ var raw_distance: float = 0.0
 const METER_MODIFIER: int = 18
 signal distance_changed(new_meters)
 
+var checkpoint_zone_active: bool = false
 var next_checkpoint_score: int = 500
 const CHECKPOINT_INTERVAL: int = 500
 
@@ -26,6 +27,7 @@ var minigame_bonus_score: int = 0
 var returning_from_minigame: bool = false
 
 signal heart_changed(new_hearts)
+signal checkpoint_zone_reached
 signal checkpoint_reached(trash_type)
 
 func reset_run() -> void:
@@ -35,6 +37,7 @@ func reset_run() -> void:
 	speed = START_SPEED
 	game_running = false
 	next_checkpoint_score = CHECKPOINT_INTERVAL
+	checkpoint_zone_active = false
 	score_changed.emit(score)
 	distance_changed.emit(0)
 	heart_changed.emit(hearts)
@@ -47,10 +50,18 @@ func add_distance(amount: float) -> void:
 	raw_distance += amount
 	var meters := int(raw_distance / METER_MODIFIER)
 	distance_changed.emit(meters)
-	if game_running and meters >= next_checkpoint_score:
-		trigger_checkpoint()
+	
+	var cond_game_running: bool = game_running
+	var cond_not_zone_active: bool = not checkpoint_zone_active
+	var cond_meters_reached: bool = meters >= next_checkpoint_score
+	
+	if cond_game_running and cond_not_zone_active and cond_meters_reached:
+		checkpoint_zone_active = true
+		checkpoint_zone_reached.emit()
 
 func trigger_checkpoint() -> void:
+	if not checkpoint_zone_active:
+		return
 	game_running = false
 	pending_trash_type = ["organik", "anorganik"].pick_random()
 	next_checkpoint_score += CHECKPOINT_INTERVAL
