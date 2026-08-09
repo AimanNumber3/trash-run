@@ -7,7 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1qt"]
 size = Vector2(560, 84)
 
-[node name="Ground" type="StaticBody2D" unique_id=1922351742]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hko8n"]
+size = Vector2(192, 128)
+
+[node name="Ground" type="StaticBody2D" unique_id=1922351742 groups=["checkpoin"]]
 script = ExtResource("1_tkvwp")
 
 [node name="Checkpoint" type="Sprite2D" parent="." unique_id=338525104]
@@ -24,3 +27,10 @@ texture = ExtResource("2_2wgq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900745798]
 shape = SubResource("RectangleShape2D_fp1qt")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D" unique_id=280188434]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D" unique_id=1530296035]
+position = Vector2(0, -128)
+shape = SubResource("RectangleShape2D_hko8n")
+debug_color = Color(0.8871946, 0.00028897703, 0.80421895, 0.41960785)

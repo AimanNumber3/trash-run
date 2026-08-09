@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bre0f5cim4g1h" path="res://Script/platform_spawner.gd" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://vnpq4kabkbjv" path="res://Scenes/GroundVariant/ground_default.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cbdlupdd1wavc" path="res://Scenes/main/hud.tscn" id="5_fo5ed"]
-[ext_resource type="PackedScene" uid="uid://clmtkno83lfca" path="res://Scenes/GroundVariant/ground_checkpoint.tscn" id="6_e0ngr"]
 [ext_resource type="PackedScene" uid="uid://ynqls64qsncx" path="res://Scenes/main/sampah/sampah_kimia.tscn" id="7_o06y3"]
 [ext_resource type="Script" uid="uid://ebx1lvpaiv2m" path="res://Script/sampah_spawner.gd" id="8_k7acu"]
 [ext_resource type="PackedScene" uid="uid://x66kqc4lfg7u" path="res://Scenes/main/sampah/sampah_berbahaya_udara.tscn" id="9_ikia7"]
@@ -25,7 +24,7 @@ position = Vector2(242, 447)
 
 [node name="PlatformSpawner" type="Node2D" parent="." unique_id=1736023572]
 script = ExtResource("2_fj7yv")
-platforms = Array[PackedScene]([ExtResource("3_tlwt5"), ExtResource("6_e0ngr")])
+platforms = Array[PackedScene]([ExtResource("3_tlwt5")])
 
 [node name="Marker2D" type="Marker2D" parent="PlatformSpawner" unique_id=1646838582]
 position = Vector2(1735, 557)

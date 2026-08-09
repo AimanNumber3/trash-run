@@ -33,6 +33,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("sampah_poin"):
 		GameManager.add_score(10)
 		area.queue_free()
+	elif area.is_in_group("checkpoin"):
+		GameManager.trigger_checkpoint()
 
 func take_damage() -> void:
 	GameManager.lose_heart()
