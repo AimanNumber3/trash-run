@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@onready var final_score_label: Label = $FinalScoreLabel
-@onready var name_input: LineEdit = $NameInput
-@onready var submit_button: Button = $SubmitButton
-@onready var leaderboard_list: VBoxContainer = $LeaderboardList
+@onready var final_score_label: Label = $HBoxContainer/VBoxContainer/FinalScoreLabel
+@onready var name_input: LineEdit = $HBoxContainer/VBoxContainer/NameInput
+@onready var submit_button: Button = $HBoxContainer/VBoxContainer/SubmitButton
+@onready var leaderboard_list: VBoxContainer = $HBoxContainer/VBoxContainer/LeaderboardList
 
 var score_submit: bool = false
 
@@ -45,3 +45,6 @@ func refresh_leaderboard() -> void:
 		var row := Label.new()
 		row.text = str(i + 1) + ". " + str(entry.get("nama", "?")) + " - " + str(entry.get("score", 0))
 		leaderboard_list.add_child(row)
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

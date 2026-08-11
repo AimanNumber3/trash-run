@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cx5v11a42fjj5"]
+
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dfptkvcixpx74" path="res://Assets/UI/menu tittle/Logo Game.png" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://c6jtdtqw7jobx" path="res://Script/main_menu.gd" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://dfsn062020sx4" path="res://Assets/0b3e02d6-dbae-44b1-9f62-59af951b19b4.png" id="3_opfnp"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="4_cp0ys"]
+[ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://Assets/UI/themes/kenneyUI-yellow.tres" id="4_opfnp"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://Assets/UI/themes/kenneyUI-blue.tres" id="4_yhxw7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fp1qt"]
+texture = ExtResource("3_opfnp")
+
+[node name="MainMenu" type="Control" unique_id=2072872059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_28flt")
+script = ExtResource("2_n45e2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1210061625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fp1qt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1658114331]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -90.0
+offset_right = 161.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1756529676]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 40
+text = "MULAI GAME"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer" unique_id=1790007934]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_yhxw7")
+theme_override_font_sizes/font_size = 40
+text = "PENGATURAN"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=784768536]
+layout_mode = 2
+alignment = 1
+
+[node name="CreditButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=884275495]
+layout_mode = 2
+theme = ExtResource("4_opfnp")
+theme_override_font_sizes/font_size = 20
+text = "KREDIT
+"
+
+[node name="ScoreButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=977054274]
+layout_mode = 2
+theme = ExtResource("4_opfnp")
+theme_override_font_sizes/font_size = 20
+text = "LEADERBOARD
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1275759069]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_cp0ys")
+theme_override_font_sizes/font_size = 40
+text = "KELUAR"
+
+[node name="LogoGame" type="Sprite2D" parent="." unique_id=544390307]
+position = Vector2(575, 122)
+texture = ExtResource("2_48xlc")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ScoreButton" to="." method="_on_score_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -60,7 +60,7 @@ position = Vector2(1408, 448)
 [node name="Marker2D2" type="Marker2D" parent="SampahSpawner" unique_id=987536042]
 position = Vector2(1408, 224)
 
+[node name="CheckpointPopup" parent="." unique_id=27998610 instance=ExtResource("12_c5t2i")]
+
 [node name="GameOver" parent="." unique_id=1012637461 instance=ExtResource("12_7yui6")]
 process_mode = 2
-
-[node name="CheckpointPopup" parent="." unique_id=27998610 instance=ExtResource("12_c5t2i")]

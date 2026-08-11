@@ -16,6 +16,7 @@ alignment = 1
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 40
 text = "SKOR: 0"
@@ -23,6 +24,7 @@ text = "SKOR: 0"
 [node name="MeterLabel" type="Label" parent="ScoreContainer" unique_id=969832771]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 25
 text = "JARAK: 0 m"
@@ -43,7 +45,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 40
-text = "TEKAN SPASI UNTUK BERMAIN"
+text = "TEKAN LAYAR UNTUK BERMAIN"
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=150035685]
 texture_filter = 1

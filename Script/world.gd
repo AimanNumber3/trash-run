@@ -6,7 +6,7 @@ const PLAYER_START_POS := Vector2(150, 485)
 func _ready() -> void:
 	add_to_group("world")
 	GameManager.screen_size = get_window().size
-	$GameOver.get_node("RestartButton").pressed.connect(_on_restart_pressed)
+	$GameOver.get_node("HBoxContainer/VBoxContainer2/RestartButton").pressed.connect(on_restart_pressed)
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
 
 	if GameManager.returning_from_minigame:
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 func _on_checkpoint_reached(trash_type: String) -> void:
 	$CheckpointPopup.show_popup(trash_type)
 
-func _on_restart_pressed() -> void:
+func on_restart_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 

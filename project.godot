@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Trash_Run"
-run/main_scene="uid://bk6n7lyec3rjv"
+run/main_scene="uid://cx5v11a42fjj5"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

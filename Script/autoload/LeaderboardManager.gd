@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH := "user://leaderboard.json"
+const SAVE_PATH := "user://scoreboard.json"
 const MAX_ENTRIES := 10
 
 signal leaderboard_update

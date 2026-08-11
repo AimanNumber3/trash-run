@@ -2,49 +2,87 @@
 
 [ext_resource type="Script" uid="uid://bsi1ucafkmtbj" path="res://Script/game_over.gd" id="1_beq28"]
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_ojehl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hko8n"]
-bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f7c8"]
-bg_color = Color(1, 0.51655674, 0.4505146, 1)
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="2_fxlin"]
+[ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://Assets/UI/themes/kenneyUI-yellow.tres" id="4_5yvec"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="4_lsbal"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://Assets/UI/themes/kenneyUI.tres" id="4_mluyo"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=1012637461]
 script = ExtResource("1_beq28")
 
-[node name="RestartButton" type="Button" parent="." unique_id=2025977304]
+[node name="Label" type="Label" parent="." unique_id=788236206]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.0
+offset_top = 50.0
+offset_right = 195.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = ExtResource("2_fxlin")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ojehl")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=262874413]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.0
-offset_top = -34.0
-offset_right = 109.0
-offset_bottom = 34.0
+offset_left = -141.5
+offset_top = -37.0
+offset_right = 141.5
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1118395619]
+layout_mode = 2
+
+[node name="FinalScoreLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=137378796]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ojehl")
+theme_override_font_sizes/font_size = 40
+text = "SKOR AKHIR"
+
+[node name="LeaderboardList" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1263432694]
+layout_mode = 2
+theme = ExtResource("4_mluyo")
+
+[node name="NameInput" type="LineEdit" parent="HBoxContainer/VBoxContainer" unique_id=2025488363]
+layout_mode = 2
+theme = ExtResource("4_mluyo")
+placeholder_text = "Masukkan Nama Anda"
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1657203708]
+layout_mode = 2
+theme = ExtResource("4_5yvec")
+theme_override_font_sizes/font_size = 25
+text = "SUBMIT NAMA"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1304630177]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=2025977304]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_fxlin")
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.65882355)
 theme_override_fonts/font = ExtResource("1_ojehl")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_hko8n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6f7c8")
 text = "RESTART"
 
-[node name="FinalScoreLabel" type="Label" parent="." unique_id=137378796]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="MenuButton" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=2101589227]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_lsbal")
+theme_override_fonts/font = ExtResource("1_ojehl")
+theme_override_font_sizes/font_size = 30
+text = "HALAMAN UTAMA"
 
-[node name="NameInput" type="LineEdit" parent="." unique_id=2025488363]
-offset_right = 68.5
-offset_bottom = 31.0
-
-[node name="SubmitButton" type="Button" parent="." unique_id=1657203708]
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="LeaderboardList" type="VBoxContainer" parent="." unique_id=1263432694]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/MenuButton" to="." method="_on_menu_button_pressed"]

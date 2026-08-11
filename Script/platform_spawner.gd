@@ -3,6 +3,7 @@ extends Node2D
 @export var platforms: Array[PackedScene]
 @export var checkpoint: PackedScene
 @export var spawn_distance: float = 500.0
+@export var platform_chance: float = 0.99
 
 @onready var marker: Marker2D = $Marker2D
 
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 		try_spawn()
 
 func try_spawn() -> void:
+	var roll := randf()
 	var spawn_scene: PackedScene
 	
 	if pending_checkpoint and checkpoint != null:
