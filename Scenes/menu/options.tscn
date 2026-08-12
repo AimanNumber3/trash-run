@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://7ruwg1xsjn31"]
+
+[ext_resource type="Script" uid="uid://ce7i7kfdj3yjt" path="res://Script/options.gd" id="1_4tmxy"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="1_prnvy"]
+
+[node name="Options" type="Control" unique_id=1376998588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4tmxy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1724812284]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_prnvy")
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=1363704459]
+layout_mode = 2
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer" unique_id=1688799637]
+layout_mode = 2
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=773529444]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1086249525]
+layout_mode = 2
+
+[connection signal="changed" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_changed"]
+[connection signal="changed" from="VBoxContainer/MusicSlider" to="." method="_on_music_slider_changed"]
+[connection signal="changed" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_changed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

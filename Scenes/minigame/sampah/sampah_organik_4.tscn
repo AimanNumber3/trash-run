@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://iyhvt3c671an"]
+[gd_scene format=3 uid="uid://cvgyvw86t2lgd"]
 
-[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_ngcqn"]
-[ext_resource type="Texture2D" uid="uid://do7vpe86cd3o8" path="res://Assets/sampah/vegetable_apple.png" id="2_ngcqn"]
+[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_a6s6v"]
+[ext_resource type="Texture2D" uid="uid://d05unoswqyg7g" path="res://Assets/sampah/cheese_blue.png" id="2_a6s6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c68vq"]
-radius = 40.0
+radius = 48.0
 
 [node name="SampahOrganik1" type="Area2D" unique_id=1794759114 groups=["sampah_poin"]]
-script = ExtResource("1_ngcqn")
+script = ExtResource("1_a6s6v")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086268913]
 texture_filter = 1
-scale = Vector2(5, 5)
-texture = ExtResource("2_ngcqn")
+scale = Vector2(6, 6)
+texture = ExtResource("2_a6s6v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1506417092]
 shape = SubResource("CircleShape2D_c68vq")

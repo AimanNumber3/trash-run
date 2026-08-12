@@ -1,18 +1,19 @@
-[gd_scene format=3 uid="uid://biyorn8whvtii"]
+[gd_scene format=3 uid="uid://c7bywkp7mnvtt"]
 
-[ext_resource type="Script" uid="uid://y3oc4ueqmayl" path="res://Script/falling_item.gd" id="1_h3wga"]
-[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_v60ps"]
+[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_75q36"]
+[ext_resource type="Texture2D" uid="uid://c61ourxwiss3y" path="res://Assets/sampah/water bottle clean.png" id="2_75q36"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gv04g"]
-radius = 60.530983
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pg5"]
+size = Vector2(56, 116)
 
-[node name="SampahPlastik2" type="Area2D" unique_id=1636436012]
-script = ExtResource("1_h3wga")
-item_category = "anorganik"
+[node name="SampahPlastik1" type="Area2D" unique_id=1697615824 groups=["sampah_poin"]]
+script = ExtResource("1_75q36")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645214254]
-texture = ExtResource("1_v60ps")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
+texture_filter = 1
+scale = Vector2(7, 7)
+texture = ExtResource("2_75q36")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181830240]
-shape = SubResource("CircleShape2D_gv04g")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2112818477]
+shape = SubResource("RectangleShape2D_m3pg5")
 debug_color = Color(0.57259566, 0.55684555, 0, 0.41960785)

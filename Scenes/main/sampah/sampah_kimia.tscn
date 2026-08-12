@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://ynqls64qsncx"]
 
-[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_mtkdo"]
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_wf3kl"]
+[ext_resource type="Texture2D" uid="uid://b6vj6xyk4y4eq" path="res://Assets/sampah/green_goo.png" id="2_8ahmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fp1qt"]
-radius = 60.530983
+radius = 48.0
 
 [node name="SampahBerbahayaTanah" type="Area2D" unique_id=313877236 groups=["sampah_hit"]]
 script = ExtResource("1_wf3kl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1516129452]
-texture = ExtResource("1_mtkdo")
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_8ahmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495495094 groups=["sampah_hit"]]
 shape = SubResource("CircleShape2D_fp1qt")

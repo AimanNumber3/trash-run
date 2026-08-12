@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://d120ovut88kof"]
 
-[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_1yf8p"]
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_miyyy"]
+[ext_resource type="Texture2D" uid="uid://cl3mwgm0kyvgj" path="res://Assets/sampah/mackerel.png" id="2_miyyy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c68vq"]
-radius = 60.530983
+radius = 40.0
 
 [node name="SampahOrganik1" type="Area2D" unique_id=1794759114 groups=["sampah_poin"]]
 script = ExtResource("1_miyyy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086268913]
-texture = ExtResource("1_1yf8p")
+texture_filter = 1
+position = Vector2(-8, 8)
+scale = Vector2(5, 5)
+texture = ExtResource("2_miyyy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1506417092]
 shape = SubResource("CircleShape2D_c68vq")

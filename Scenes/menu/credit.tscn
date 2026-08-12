@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bdyjkgad6qk6r"]
+
+[ext_resource type="Script" uid="uid://xsvtvmk0jk78" path="res://Script/credit.gd" id="1_8u2iu"]
+
+[node name="Credit" type="Control" unique_id=217919581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8u2iu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1655510839]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1876844396]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ScrollContainer" unique_id=626972259]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=287457442]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_button_pressed"]

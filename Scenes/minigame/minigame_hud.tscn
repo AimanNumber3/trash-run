@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://o3uw4afc15k5"]
 
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_sxmmw"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="2_hahaj"]
 
 [node name="MinigameHUD" type="CanvasLayer" unique_id=2116172936]
 
@@ -54,6 +55,7 @@ anchor_bottom = 1.0
 offset_top = -68.0
 offset_right = 63.0
 grow_vertical = 0
+theme = ExtResource("2_hahaj")
 theme_override_fonts/font = ExtResource("1_sxmmw")
 theme_override_font_sizes/font_size = 40
 text = "<-"
@@ -68,6 +70,7 @@ offset_left = -23.0
 offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("2_hahaj")
 theme_override_fonts/font = ExtResource("1_sxmmw")
 theme_override_font_sizes/font_size = 40
 text = "->"

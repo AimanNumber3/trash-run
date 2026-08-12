@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://iyhvt3c671an"]
+[gd_scene format=3 uid="uid://cl2x8rs3inmou"]
 
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_ngcqn"]
 [ext_resource type="Texture2D" uid="uid://do7vpe86cd3o8" path="res://Assets/sampah/vegetable_apple.png" id="2_ngcqn"]

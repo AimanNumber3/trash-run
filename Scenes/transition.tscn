@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dp6j6m4j4sqrt"]
 
 [ext_resource type="Shader" uid="uid://bqg3w4inc23ct" path="res://Script/shader/transition.gdshader" id="1_jnsx0"]
+[ext_resource type="Texture2D" uid="uid://d2h436mokxgrg" path="res://Assets/UI/{AB7C3A55-59E5-43EE-B666-2BDEF6CD7F39}.png" id="2_ah04o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fp1qt"]
 shader = ExtResource("1_jnsx0")
+shader_parameter/mask_texture = ExtResource("2_ah04o")
 shader_parameter/zoom = 1.0
 shader_parameter/strength = 0.0
 shader_parameter/center = Vector2(0.5, 0.5)

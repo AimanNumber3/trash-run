@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://s5m4wjqalh00"]
+[gd_scene format=3 uid="uid://bw0velcd5sbx1"]
 
-[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_tvepe"]
-[ext_resource type="Texture2D" uid="uid://d2hwi7plyq22f" path="res://Assets/sampah/water bottle crumpled.png" id="2_f21sf"]
+[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_5lv5u"]
+[ext_resource type="Texture2D" uid="uid://csbj881n3l7di" path="res://Assets/sampah/crumpled paper 1.png" id="2_5lv5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pg5"]
-size = Vector2(112, 48)
+size = Vector2(68, 56)
 
 [node name="SampahPlastik1" type="Area2D" unique_id=1697615824 groups=["sampah_poin"]]
-script = ExtResource("1_tvepe")
+script = ExtResource("1_5lv5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
 texture_filter = 1
-scale = Vector2(7, 7)
-texture = ExtResource("2_f21sf")
+scale = Vector2(8, 8)
+texture = ExtResource("2_5lv5u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2112818477]
 shape = SubResource("RectangleShape2D_m3pg5")

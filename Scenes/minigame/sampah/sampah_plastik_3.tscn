@@ -1,15 +1,19 @@
-[gd_scene format=3 uid="uid://cldlx0i8kq47n"]
+[gd_scene format=3 uid="uid://c271m52yxc8fg"]
 
-[ext_resource type="Texture2D" uid="uid://cfj210newt8x7" path="res://icon.svg" id="1_q614j"]
+[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_5lv5u"]
+[ext_resource type="Texture2D" uid="uid://csbj881n3l7di" path="res://Assets/sampah/crumpled paper 1.png" id="2_5lv5u"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2k7rh"]
-radius = 60.530983
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pg5"]
+size = Vector2(68, 56)
 
-[node name="SampahPlastik3" type="Area2D" unique_id=1794759114]
+[node name="SampahPlastik1" type="Area2D" unique_id=1697615824 groups=["sampah_poin"]]
+script = ExtResource("1_5lv5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1377135008]
-texture = ExtResource("1_q614j")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("2_5lv5u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076377993]
-shape = SubResource("CircleShape2D_2k7rh")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2112818477]
+shape = SubResource("RectangleShape2D_m3pg5")
 debug_color = Color(0.57259566, 0.55684555, 0, 0.41960785)
