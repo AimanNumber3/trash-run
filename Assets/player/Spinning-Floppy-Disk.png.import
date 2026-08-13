@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgdwfecfq8ci0"
-path="res://.godot/imported/vegetation_grass_small.png-09858711fd86816cd8ab9857aaab9bd0.ctex"
+uid="uid://ddoc78ghl6tg8"
+path="res://.godot/imported/Spinning-Floppy-Disk.png-a6c6674b6eb79287b4f24dab9471a5d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tileset/vegetation_grass_small.png"
-dest_files=["res://.godot/imported/vegetation_grass_small.png-09858711fd86816cd8ab9857aaab9bd0.ctex"]
+source_file="res://Assets/player/Spinning-Floppy-Disk.png"
+dest_files=["res://.godot/imported/Spinning-Floppy-Disk.png-a6c6674b6eb79287b4f24dab9471a5d3.ctex"]
 
 [params]
 

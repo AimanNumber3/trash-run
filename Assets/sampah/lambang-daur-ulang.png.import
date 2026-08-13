@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq3pghspdwqp2"
-path="res://.godot/imported/Dumpster 3 - With Lid.png-26f01040b6340d275f1784415ae1a8ea.ctex"
+uid="uid://22j25vtnrmx2"
+path="res://.godot/imported/lambang-daur-ulang.png-a8b0ce252ae776cffaea572953e17a0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dumpster 3 - With Lid.png"
-dest_files=["res://.godot/imported/Dumpster 3 - With Lid.png-26f01040b6340d275f1784415ae1a8ea.ctex"]
+source_file="res://Assets/sampah/lambang-daur-ulang.png"
+dest_files=["res://.godot/imported/lambang-daur-ulang.png-a8b0ce252ae776cffaea572953e17a0a.ctex"]
 
 [params]
 

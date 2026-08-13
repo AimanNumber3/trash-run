@@ -3,6 +3,21 @@
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_e0onf"]
 [ext_resource type="Script" uid="uid://docbtqwumq2ya" path="res://Script/hud.gd" id="1_fccik"]
 [ext_resource type="Texture2D" uid="uid://bdy8tq2njm8te" path="res://Assets/sampah/garbage bag small 1.png" id="3_bjfho"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="3_ey48n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hahaj"]
+shader = ExtResource("3_ey48n")
+shader_parameter/band_color = Color(0.45364925, 0, 0, 1)
+shader_parameter/band_thickness = 0.49999998882401
+shader_parameter/band_intensity = 1.0
+shader_parameter/speed = 1.0399999804797
+shader_parameter/direction = 2
+shader_parameter/offset = 0.52999998815344
+shader_parameter/blend_mode = 0
+shader_parameter/edge_softness = 0.170000008075
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sqkbx"]
+load_path = "res://.godot/imported/garbage bag small 1.png-0cf4c9c28a0ac8e5f3d8b218cccf07d0.ctex"
 
 [node name="HUD" type="CanvasLayer" unique_id=2122006861]
 script = ExtResource("1_fccik")
@@ -63,18 +78,21 @@ offset_transform_scale = Vector2(5, 5)
 alignment = 1
 
 [node name="Heart1" type="TextureRect" parent="HeartContainer" unique_id=1058720406]
+material = SubResource("ShaderMaterial_hahaj")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_bjfho")
+texture = SubResource("CompressedTexture2D_sqkbx")
 
 [node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=632882646]
+material = SubResource("ShaderMaterial_hahaj")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_bjfho")
 
 [node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1939350253]
+material = SubResource("ShaderMaterial_hahaj")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

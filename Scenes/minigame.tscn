@@ -1658,13 +1658,16 @@ items = Array[PackedScene]([ExtResource("6_yx24v"), ExtResource("7_255i5"), ExtR
 autostart = true
 
 [node name="marker1" type="Marker2D" parent="ItemSpawner" unique_id=1336846130]
-position = Vector2(936, -200)
+position = Vector2(960, -128)
 
 [node name="marker2" type="Marker2D" parent="ItemSpawner" unique_id=1566695309]
-position = Vector2(584, -224)
+position = Vector2(704, -128)
 
 [node name="marker3" type="Marker2D" parent="ItemSpawner" unique_id=813388579]
-position = Vector2(192, -184)
+position = Vector2(192, -128)
+
+[node name="marker4" type="Marker2D" parent="ItemSpawner" unique_id=1665336879]
+position = Vector2(448, -128)
 
 [node name="MinigameHUD" parent="." unique_id=2116172936 instance=ExtResource("3_xt64r")]
 

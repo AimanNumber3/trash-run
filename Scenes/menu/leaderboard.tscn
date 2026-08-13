@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bbxwhhax4f87d" path="res://Script/leaderboard.gd" id="1_ogwkr"]
 [ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://Assets/UI/themes/kenneyUI.tres" id="2_3qm6y"]
+[ext_resource type="Texture2D" uid="uid://dq4ii606prrpw" path="res://Assets/minigame background.png" id="2_ds4ie"]
 [ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="3_3qm6y"]
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="3_a3hu2"]
 [ext_resource type="Script" uid="uid://bnm33lbqk3ib1" path="res://Script/shader/title_label.gd" id="3_d4n4e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njjy1"]
+texture = ExtResource("2_ds4ie")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4n4e"]
 bg_color = Color(0, 0, 0, 0.39607844)
@@ -21,6 +25,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ogwkr")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1844438103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_njjy1")
 
 [node name="Panel" type="Panel" parent="." unique_id=796254680]
 layout_mode = 1

@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_227pf"]
 shader = ExtResource("2_efqn0")
-shader_parameter/band_color = Color(0.941, 0.655, 0.31, 1)
+shader_parameter/band_color = Color(1, 1, 0, 1)
 shader_parameter/band_thickness = 0.49999998882401
 shader_parameter/band_intensity = 1.0
 shader_parameter/speed = 0.83999998495

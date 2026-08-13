@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var items: Array[PackedScene]
-@onready var markers: Array[Marker2D] = [$marker1, $marker2, $marker3]
+@onready var markers: Array[Marker2D] = [$marker1, $marker2, $marker3, $marker4]
 
 func _on_timer_timeout() -> void:
 	var random_item: PackedScene = items.pick_random()

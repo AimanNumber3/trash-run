@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://vnpq4kabkbjv"]
 
-[ext_resource type="Script" uid="uid://dh864g4wfwj0f" path="res://Script/platform.gd" id="1_n5262"]
 [ext_resource type="Texture2D" uid="uid://bmsbhewlbfhns" path="res://Assets/tileset/wood_tileset.png" id="2_dbqad"]
+[ext_resource type="Script" uid="uid://bx2u6bpumlfbt" path="res://Script/ground.gd" id="2_fwady"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwady"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxev4"]
 texture = ExtResource("2_dbqad")
 0:0/0 = 0
 1:0/0 = 0
@@ -18,12 +18,19 @@ texture = ExtResource("2_dbqad")
 10:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
 9:1/0 = 0
 10:1/0 = 0
@@ -50,21 +57,12 @@ texture = ExtResource("2_dbqad")
 9:3/0 = 0
 10:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_fp1qt"]
+[sub_resource type="TileSet" id="TileSet_hko8n"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_fwady")
+sources/0 = SubResource("TileSetAtlasSource_lxev4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp1qt"]
-size = Vector2(560, 84)
-
-[node name="Ground" type="StaticBody2D" unique_id=1922351742]
-script = ExtResource("1_n5262")
-
-[node name="Sprite2D" type="TileMapLayer" parent="." unique_id=393975706]
-texture_filter = 1
-scale = Vector2(5, 5)
-tile_set = SubResource("TileSet_fp1qt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900745798]
-position = Vector2(114, 321)
-shape = SubResource("RectangleShape2D_fp1qt")
+[node name="Ground" type="TileMapLayer" unique_id=1345713280]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_hko8n")
+script = ExtResource("2_fwady")
