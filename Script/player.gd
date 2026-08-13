@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
+		AudioManager.play_sfx("jump")
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y *= JUMP_MULTIPLIER
 	move_and_slide()
@@ -29,8 +29,10 @@ func update_animation() -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sampah_hit") and not is_invulnerable:
+		AudioManager.play_sfx("hit")
 		take_damage()
 	elif area.is_in_group("sampah_poin"):
+		AudioManager.play_sfx("collect_point")
 		GameManager.add_score(10)
 		area.queue_free()
 	elif area.is_in_group("checkpoin"):

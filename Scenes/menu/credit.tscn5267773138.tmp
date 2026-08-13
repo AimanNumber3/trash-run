@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bdyjkgad6qk6r"]
+
+[ext_resource type="Script" uid="uid://xsvtvmk0jk78" path="res://Script/credit.gd" id="1_8u2iu"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://Assets/UI/themes/kenneyUI.tres" id="2_d5xsb"]
+[ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="3_d0wia"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="3_ufomd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5uo"]
+bg_color = Color(0, 0, 0, 0.4117647)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[node name="Credit" type="Control" unique_id=217919581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8u2iu")
+
+[node name="Panel" type="Panel" parent="." unique_id=538529553]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -472.0
+offset_top = -228.0
+offset_right = 472.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ws5uo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=626972259]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_d0wia")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[wave amp=30 freq=2][rainbow]CREDIT[/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1655510839]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -222.0
+offset_right = 458.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1876844396]
+layout_mode = 2
+theme = ExtResource("2_d5xsb")
+
+[node name="CreditLists" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=2099037320]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=287457442]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ufomd")
+theme_override_font_sizes/font_size = 25
+text = "KEMBALI"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

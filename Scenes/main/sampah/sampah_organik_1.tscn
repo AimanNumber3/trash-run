@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://d120ovut88kof"]
 
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_miyyy"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="2_hgbml"]
 [ext_resource type="Texture2D" uid="uid://cl3mwgm0kyvgj" path="res://Assets/sampah/mackerel.png" id="2_miyyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sf1xq"]
+shader = ExtResource("2_hgbml")
+shader_parameter/band_color = Color(0, 0.9529412, 0, 1)
+shader_parameter/band_thickness = 0.29999999329441
+shader_parameter/band_intensity = 1.0
+shader_parameter/speed = 0.99999998137376
+shader_parameter/direction = 0
+shader_parameter/offset = 0.0
+shader_parameter/blend_mode = 0
+shader_parameter/edge_softness = 0.0690000032775
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c68vq"]
 radius = 40.0
@@ -11,6 +23,7 @@ script = ExtResource("1_miyyy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086268913]
 texture_filter = 1
+material = SubResource("ShaderMaterial_sf1xq")
 position = Vector2(-8, 8)
 scale = Vector2(5, 5)
 texture = ExtResource("2_miyyy")

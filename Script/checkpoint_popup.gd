@@ -10,13 +10,14 @@ func _ready() -> void:
 func show_popup(trash_type: String) -> void:
 	label.text = "Setor sampah %s?" % trash_type
 	get_tree().paused = true
+	SaveManager.save_game()
 	show()
 
 func _on_yes_button_pressed() -> void:
 	print("yes")
 	hide()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/minigame.tscn")
+	TransitionManager.change_scene("res://Scenes/minigame.tscn")
 
 func _on_no_button_pressed() -> void:
 	print("no")

@@ -4,6 +4,7 @@ const PLAYER_START_POS := Vector2(150, 485)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.play_music("gameplay")
 	add_to_group("world")
 	GameManager.screen_size = get_window().size
 	$GameOver.get_node("HBoxContainer/VBoxContainer2/RestartButton").pressed.connect(on_restart_pressed)
@@ -27,9 +28,16 @@ func resume_game():
 	get_tree().paused = false
 	$Player.position = PLAYER_START_POS
 	$Player.velocity = Vector2i(0, 0)
-	$HUD.get_node("StartLabel").hide()
+	$HUD.get_node("StartLabel").show()
 	$GameOver.hide()
-	GameManager.game_running = true
+	GameManager.game_running = false
+
+func hitung_mundur() -> void:
+	for i in [3,2,1]:
+		$HUD.get_node("CoundownLabel").text = str(i)
+		$HUD.get_node("CoundownLabel").show()
+		await get_tree().create_timer(1.0).timeout
+	%HUD.get_node("CoundownLabel").hide()
 
 func _process(delta: float) -> void:
 	if GameManager.game_running:
@@ -49,5 +57,8 @@ func on_restart_pressed() -> void:
 
 func game_over():
 	get_tree().paused = true
+	AudioManager.play_sfx("game_over")
+	AudioManager.stop_music()
 	$GameOver.show_game_over()
 	GameManager.game_running = false
+	SaveManager.clear_save()

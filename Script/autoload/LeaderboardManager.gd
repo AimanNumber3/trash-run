@@ -9,9 +9,8 @@ func submit_score(player_name: String, final_score: int) -> void:
 	var clean_name := player_name.strip_edges()
 	if clean_name.is_empty():
 		clean_name = "Player"
-	
 	var scores := load_scores()
-	var new_name := {"name": clean_name, "skor": final_score}
+	var new_name := {"nama": clean_name, "skor": final_score}
 	scores.append(new_name)
 	
 	scores.sort_custom(func(a, b): return a["skor"] > b["skor"])

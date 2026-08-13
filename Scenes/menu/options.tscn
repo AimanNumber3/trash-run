@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://ce7i7kfdj3yjt" path="res://Script/options.gd" id="1_4tmxy"]
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="1_prnvy"]
+[ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="3_yqykb"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="4_mnvlr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqykb"]
+bg_color = Color(0, 0, 0, 0.39607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Options" type="Control" unique_id=1376998588]
 layout_mode = 3
@@ -12,6 +21,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4tmxy")
 
+[node name="Panel2" type="Panel" parent="." unique_id=778931219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = -40.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqykb")
+
+[node name="TitleLabel" type="RichTextLabel" parent="." unique_id=56376920]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme = ExtResource("1_prnvy")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[wave amp=30 freq=2][rainbow]PENGATURAN[/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=305733826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -180.0
+offset_right = 200.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_prnvy")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1724812284]
 layout_mode = 1
 anchors_preset = 8
@@ -19,27 +70,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.0
-offset_right = 20.0
-offset_bottom = 34.0
+offset_left = -168.0
+offset_top = -81.5
+offset_right = 168.0
+offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_prnvy")
 
-[node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=1363704459]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1182070304]
 layout_mode = 2
 
-[node name="MusicSlider" type="HSlider" parent="VBoxContainer" unique_id=1688799637]
+[node name="MasterLabel" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=174725149]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yqykb")
+theme_override_font_sizes/font_size = 20
+text = "MASTER VOLUME"
 
-[node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=773529444]
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer/VBoxContainer" unique_id=1363704459]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=597899975]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yqykb")
+theme_override_font_sizes/font_size = 20
+text = "MUSIC VOLUME"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/VBoxContainer" unique_id=1688799637]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="SFXLabel" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=801416564]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yqykb")
+theme_override_font_sizes/font_size = 20
+text = "SFX VOLUME"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/VBoxContainer" unique_id=773529444]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1086249525]
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_mnvlr")
+theme_override_font_sizes/font_size = 25
+text = "KEMBALI"
 
-[connection signal="changed" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_changed"]
-[connection signal="changed" from="VBoxContainer/MusicSlider" to="." method="_on_music_slider_changed"]
-[connection signal="changed" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_changed"]
+[connection signal="changed" from="VBoxContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_changed"]
+[connection signal="changed" from="VBoxContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_changed"]
+[connection signal="changed" from="VBoxContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_changed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

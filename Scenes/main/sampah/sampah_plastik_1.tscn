@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://bc0de6feu8h2s"]
 
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_tvepe"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="2_4cvo8"]
 [ext_resource type="Texture2D" uid="uid://d2hwi7plyq22f" path="res://Assets/sampah/water bottle crumpled.png" id="2_f21sf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rmfe"]
+shader = ExtResource("2_4cvo8")
+shader_parameter/band_color = Color(0.9411765, 1, 0, 1)
+shader_parameter/band_thickness = 0.39999999105921
+shader_parameter/band_intensity = 1.0
+shader_parameter/speed = 0.79999998584406
+shader_parameter/direction = 0
+shader_parameter/offset = 0.0
+shader_parameter/blend_mode = 0
+shader_parameter/edge_softness = 0.10000000475
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pg5"]
 size = Vector2(112, 48)
@@ -11,6 +23,7 @@ script = ExtResource("1_tvepe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
 texture_filter = 1
+material = SubResource("ShaderMaterial_0rmfe")
 scale = Vector2(7, 7)
 texture = ExtResource("2_f21sf")
 

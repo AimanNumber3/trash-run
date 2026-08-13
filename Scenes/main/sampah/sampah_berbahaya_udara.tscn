@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://x66kqc4lfg7u"]
 
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_q3wb3"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="2_j6jd4"]
 [ext_resource type="Texture2D" uid="uid://bqoq1nh6r6o2h" path="res://Assets/sampah/scissor.png" id="2_psi07"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp0ys"]
+shader = ExtResource("2_j6jd4")
+shader_parameter/band_color = Color(1, 0, 0, 1)
+shader_parameter/band_thickness = 0.5
+shader_parameter/band_intensity = 0.98999997787152
+shader_parameter/speed = 1.49999997019801
+shader_parameter/direction = 0
+shader_parameter/offset = 0.0
+shader_parameter/blend_mode = 0
+shader_parameter/edge_softness = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtkdo"]
 radius = 40.0
@@ -11,6 +23,7 @@ script = ExtResource("1_q3wb3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=4409754]
 texture_filter = 1
+material = SubResource("ShaderMaterial_cp0ys")
 scale = Vector2(5, 5)
 texture = ExtResource("2_psi07")
 

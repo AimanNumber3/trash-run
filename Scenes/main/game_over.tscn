@@ -7,8 +7,29 @@
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="4_lsbal"]
 [ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://Assets/UI/themes/kenneyUI.tres" id="4_mluyo"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp1qt"]
+bg_color = Color(0, 0, 0, 0.36862746)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="GameOver" type="CanvasLayer" unique_id=1012637461]
 script = ExtResource("1_beq28")
+
+[node name="Panel" type="Panel" parent="." unique_id=343082040]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -284.0
+offset_right = 528.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fp1qt")
 
 [node name="Label" type="Label" parent="." unique_id=788236206]
 anchors_preset = 5

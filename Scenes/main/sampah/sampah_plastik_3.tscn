@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_5lv5u"]
 [ext_resource type="Texture2D" uid="uid://csbj881n3l7di" path="res://Assets/sampah/crumpled paper 1.png" id="2_5lv5u"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="2_8o68l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxk7d"]
+shader = ExtResource("2_8o68l")
+shader_parameter/band_color = Color(1, 1, 0, 1)
+shader_parameter/band_thickness = 0.31999999284737
+shader_parameter/band_intensity = 1.0
+shader_parameter/speed = 0.73999998718515
+shader_parameter/direction = 0
+shader_parameter/offset = 0.0
+shader_parameter/blend_mode = 0
+shader_parameter/edge_softness = 0.106000005035
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pg5"]
 size = Vector2(68, 56)
@@ -11,6 +23,7 @@ script = ExtResource("1_5lv5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=605630287]
 texture_filter = 1
+material = SubResource("ShaderMaterial_xxk7d")
 scale = Vector2(8, 8)
 texture = ExtResource("2_5lv5u")
 

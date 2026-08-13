@@ -1,16 +1,29 @@
 [gd_scene format=3 uid="uid://bgx5hnowowk8t"]
 
-[ext_resource type="Script" uid="uid://cd5b4g4b8mtn0" path="res://Script/sampah.gd" id="1_d286e"]
+[ext_resource type="Script" uid="uid://y3oc4ueqmayl" path="res://Script/falling_item.gd" id="1_qecns"]
 [ext_resource type="Texture2D" uid="uid://uop4p87lxpek" path="res://Assets/sampah/vegetable_potato.png" id="2_d286e"]
+[ext_resource type="Shader" uid="uid://dy6g031dvg1kt" path="res://Script/shader/item_color.gdshader" id="2_pvd18"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvd18"]
+shader = ExtResource("2_pvd18")
+shader_parameter/band_color = Color(0, 1, 0, 1)
+shader_parameter/band_thickness = 0.27999999374145
+shader_parameter/band_intensity = 1.0
+shader_parameter/speed = 0.77999998629109
+shader_parameter/direction = 0
+shader_parameter/offset = 0.0
+shader_parameter/blend_mode = 2
+shader_parameter/edge_softness = 0.110000005225
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c68vq"]
 radius = 48.0
 
 [node name="SampahOrganik1" type="Area2D" unique_id=1794759114 groups=["sampah_poin"]]
-script = ExtResource("1_d286e")
+script = ExtResource("1_qecns")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086268913]
 texture_filter = 1
+material = SubResource("ShaderMaterial_pvd18")
 scale = Vector2(5, 5)
 texture = ExtResource("2_d286e")
 
