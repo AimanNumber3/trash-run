@@ -17,6 +17,23 @@ theme_override_fonts/font = ExtResource("1_sxmmw")
 theme_override_font_sizes/font_size = 40
 text = "organik"
 
+[node name="TargetPreview" type="Node2D" parent="." unique_id=2125324360]
+
+[node name="slot1" type="Node2D" parent="TargetPreview" unique_id=930323290]
+texture_filter = 1
+position = Vector2(960, 96)
+scale = Vector2(0.5, 0.5)
+
+[node name="slot2" type="Node2D" parent="TargetPreview" unique_id=925408707]
+texture_filter = 1
+position = Vector2(1024, 96)
+scale = Vector2(0.5, 0.5)
+
+[node name="slot3" type="Node2D" parent="TargetPreview" unique_id=612422290]
+texture_filter = 1
+position = Vector2(1088, 96)
+scale = Vector2(0.5, 0.5)
+
 [node name="TimeLabel" type="Label" parent="." unique_id=534007774]
 texture_filter = 1
 anchors_preset = 5

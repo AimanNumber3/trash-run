@@ -1,16 +1,18 @@
 extends CanvasLayer
 
 @onready var transition_rect: ColorRect = $TransitionRect
-@onready var fact_label: Label = $FactLabel
+@onready var tips_label: Label = $TipsLabel
+@onready var tips_panel: VBoxContainer = $TipsPanel
+@onready var texture_rect: TextureRect = $TipsPanel/TextureRect
 
-const FACT_SCENES := [
+const TIPS_SCENES := [
 	"res://Scenes/world.tscn",
 	"res://Scenes/minigame.tscn",
 ]
-const FACT_DISPLAY_DURATION := 2.5
-const FACT_FADE_DURATION := 0.4
+const TIPS_DURATION := 4
+const TIPS_FADE := 0.4
 
-const FACTS := [
+const TIPS := [
 	"Sampah plastik butuh ratusan tahun untuk terurai di alam.",
 	"Sampah organik bisa diolah menjadi kompos untuk menyuburkan tanah.",
 	"Memilah sampah dari rumah membantu mengurangi timbunan sampah di TPA.",
@@ -23,74 +25,69 @@ const FACTS := [
 	"Mengompos sampah organik dapat mengurangi emisi gas metana di TPA.",
 ]
 
-var _is_transitioning: bool = false
-var _fact_tween: Tween
+var transitioning: bool = false
+var tips_tween: Tween
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	print("[Transition] children saat _ready: ", get_children())
+	transitioning = false
 	if transition_rect == null:
 		push_error("TransitionManager: node TransitionRect tidak ditemukan! Cek nama/path node.")
 	else:
 		transition_rect.material.set_shader_parameter("zoom", 0.0)
 		transition_rect.hide()
-	if fact_label == null:
+	if tips_label == null:
 		push_error("TransitionManager: node FactLabel tidak ditemukan! Cek nama/path node — harus sibling dari TransitionRect, langsung di bawah node ini.")
 	else:
-		fact_label.hide()
+		tips_label.hide()
+		tips_label.modulate.a = 0.0
 
 func change_scene(target_path: String) -> void:
-	print("[Transition] change_scene ke: ", target_path, " | sedang transisi? ", _is_transitioning)
-	if _is_transitioning:
+	if transitioning:
 		push_warning("TransitionManager: change_scene dipanggil saat transisi lain masih berjalan, diabaikan.")
 		return
-	_is_transitioning = true
-
-	var show_fact := target_path in FACT_SCENES
-	print("[Transition] show_fact = ", show_fact)
-
+	transitioning = true
+	var show_tips := target_path in TIPS_SCENES
+		
 	if transition_rect:
 		transition_rect.show()
 		var tween_in := create_tween()
 		tween_in.tween_method(_set_progress, 2.0, 0.0, 0.5)
 		await tween_in.finished
-
-	if show_fact and fact_label:
-		print("[Transition] mulai fade-in fakta")
-		await _show_fact()
-		print("[Transition] selesai fade-out fakta")
-
+	
+	if show_tips and tips_label:
+		await show_tips()
+	
 	get_tree().change_scene_to_file(target_path)
 	await get_tree().process_frame
-
+	
 	if transition_rect:
 		var tween_out := create_tween()
 		tween_out.tween_method(_set_progress, 0.0, 2.0, 0.5)
 		await tween_out.finished
 		transition_rect.hide()
+	
+	transitioning = false
 
-	_is_transitioning = false
-	print("[Transition] selesai total")
+func show_tips() -> void:
+	if tips_tween:
+		tips_tween.kill()
 
-func _show_fact() -> void:
-	if _fact_tween:
-		_fact_tween.kill()
+	tips_label.text = TIPS.pick_random()
+	tips_label.modulate.a = 0.0
+	tips_label.show()
 
-	fact_label.text = FACTS.pick_random()
-	fact_label.modulate.a = 0.0
-	fact_label.show()
+	tips_tween = create_tween()
+	tips_tween.tween_property(tips_label, "modulate:a", 1.0, TIPS_FADE)
+	await get_tree().create_timer(TIPS_FADE, true).timeout   # ganti dari await tips_tween.finished
 
-	_fact_tween = create_tween()
-	_fact_tween.tween_property(fact_label, "modulate:a", 1.0, FACT_FADE_DURATION)
-	await _fact_tween.finished
+	await get_tree().create_timer(TIPS_DURATION, true).timeout
 
-	await get_tree().create_timer(FACT_DISPLAY_DURATION, true).timeout
+	tips_tween = create_tween()
+	tips_tween.tween_property(tips_label, "modulate:a", 0.0, TIPS_FADE)
+	await get_tree().create_timer(TIPS_FADE, true).timeout   # ganti juga di sini
 
-	_fact_tween = create_tween()
-	_fact_tween.tween_property(fact_label, "modulate:a", 0.0, FACT_FADE_DURATION)
-	await _fact_tween.finished
-
-	fact_label.hide()
+	tips_label.hide()
 
 func _set_progress(value: float) -> void:
 	if transition_rect:
