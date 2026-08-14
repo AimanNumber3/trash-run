@@ -2,7 +2,41 @@
 
 [ext_resource type="FontFile" uid="uid://b26jpubxiysma" path="res://Assets/UI/fonts/Kenney Blocks.ttf" id="1_sxmmw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxmmw"]
+bg_color = Color(0, 0, 0, 0.3529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp1qt"]
+bg_color = Color(0, 0, 0, 0.3529412)
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hko8n"]
+bg_color = Color(0, 0, 0, 0.3529412)
+corner_radius_bottom_right = 22
+
 [node name="MinigameHUD" type="CanvasLayer" unique_id=2116172936]
+
+[node name="Panel" type="Panel" parent="." unique_id=749819867]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxmmw")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1582563180]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_top = 64.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fp1qt")
+
+[node name="Panel3" type="Panel" parent="." unique_id=1109515201]
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hko8n")
 
 [node name="TargetLabel" type="Label" parent="." unique_id=1850063379]
 texture_filter = 1
@@ -49,8 +83,9 @@ theme_override_font_sizes/font_size = 40
 text = "WAKTU: 15"
 
 [node name="ScoreContainer" type="VBoxContainer" parent="." unique_id=675256777]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 210.0
+offset_bottom = 128.0
+theme_override_constants/separation = 15
 
 [node name="BonusLabel" type="Label" parent="ScoreContainer" unique_id=413516098]
 texture_filter = 1

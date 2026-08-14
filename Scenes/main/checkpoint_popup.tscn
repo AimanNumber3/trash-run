@@ -5,6 +5,13 @@
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://Assets/UI/themes/kenneyUI-green.tres" id="3_dvvod"]
 [ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://Assets/UI/themes/kenneyUI-red.tres" id="4_a501a"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp1qt"]
+bg_color = Color(0, 0, 0, 0.36078432)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkt6c"]
 bg_color = Color(0.65882355, 0.7764706, 0, 1)
 
@@ -14,6 +21,18 @@ bg_color = Color(1, 0.51655674, 0.4505146, 1)
 [node name="CheckpointPopup" type="CanvasLayer" unique_id=27998610]
 process_mode = 3
 script = ExtResource("1_1hmht")
+
+[node name="Panel" type="Panel" parent="." unique_id=1979256194]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 177.0
+offset_right = -147.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fp1qt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=319427636]
 texture_filter = 1

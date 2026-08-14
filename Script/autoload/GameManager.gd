@@ -65,6 +65,7 @@ func trigger_checkpoint() -> void:
 	game_running = false
 	pending_trash_type = ["organik", "anorganik"].pick_random()
 	next_checkpoint_score += CHECKPOINT_INTERVAL
+	checkpoint_zone_active = false
 	checkpoint_reached.emit(pending_trash_type)
 
 func lose_heart() -> void:

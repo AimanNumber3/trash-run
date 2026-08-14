@@ -50,4 +50,5 @@ func refresh_leaderboard() -> void:
 
 func _on_menu_button_pressed() -> void:
 	AudioManager.play_sfx("button_return")
+	get_tree().paused = false
 	TransitionManager.change_scene("res://Scenes/main_menu.tscn")
