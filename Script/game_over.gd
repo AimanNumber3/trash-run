@@ -4,12 +4,14 @@ extends CanvasLayer
 @onready var name_input: LineEdit = $HBoxContainer/VBoxContainer/NameInput
 @onready var submit_button: Button = $HBoxContainer/VBoxContainer/SubmitButton
 @onready var leaderboard_list: VBoxContainer = $HBoxContainer/VBoxContainer/LeaderboardList
+@onready var menu_button: Button = $HBoxContainer/VBoxContainer2/MenuButton
 
 var score_submit: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	submit_button.pressed.connect(_on_submit_button_pressed)
+	menu_button.pressed.connect(_on_menu_button_pressed)
 
 func _on_submit_button_pressed() -> void:
 	if score_submit:

@@ -322,11 +322,9 @@ position = Vector2(1280, 216)
 position = Vector2(1279, 384)
 
 [node name="CheckpointPopup" parent="." unique_id=27998610 instance=ExtResource("12_c5t2i")]
-visible = false
 
 [node name="GameOver" parent="." unique_id=1012637461 instance=ExtResource("12_7yui6")]
 process_mode = 2
-visible = false
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=714408651]
 texture_filter = 1
