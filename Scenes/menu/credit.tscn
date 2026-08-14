@@ -85,6 +85,27 @@ theme = ExtResource("2_d5xsb")
 [node name="CreditLists" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=2099037320]
 layout_mode = 2
 
+[node name="Kredit" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=485337622]
+layout_mode = 2
+
+[node name="Kredit2" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=262863810]
+layout_mode = 2
+
+[node name="Kredit3" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=1169484156]
+layout_mode = 2
+
+[node name="Kredit4" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=1331596769]
+layout_mode = 2
+
+[node name="Kredit5" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=1946472993]
+layout_mode = 2
+
+[node name="Kredit6" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=856882509]
+layout_mode = 2
+
+[node name="Kredit7" type="Label" parent="VBoxContainer/ScrollContainer/CreditLists" unique_id=408041637]
+layout_mode = 2
+
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=287457442]
 layout_mode = 2
 size_flags_horizontal = 4
